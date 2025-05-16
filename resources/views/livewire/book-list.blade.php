@@ -1,5 +1,5 @@
 <div>
-    <livewire:page-header>
+    <livewire:page-header subtitle="Here's a list of your book reviews ...">
     <ul class="list">
         @foreach($books as $book)
             <li wire:key="{{ $book->id }}">
