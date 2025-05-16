@@ -5,12 +5,11 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 class BookList extends Component
 {
-    public $name = "Mario";
     public function delete(Book $book)
     {
         $book->delete();
     }
-    
+
     #[Title('Book List - Home')]
     public function render()
     {
