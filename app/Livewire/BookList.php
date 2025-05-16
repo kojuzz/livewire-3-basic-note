@@ -1,6 +1,7 @@
 <?php
 namespace App\Livewire;
 use App\Models\Book;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 class BookList extends Component
 {
@@ -9,6 +10,8 @@ class BookList extends Component
     {
         $book->delete();
     }
+    
+    #[Title('Book List - Home')]
     public function render()
     {
         return view('livewire.book-list', [
