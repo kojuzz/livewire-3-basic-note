@@ -6,6 +6,7 @@ use App\Models\Book;
 use Livewire\Component;
 // use Livewire\Attributes\Layout;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 
 class CreateBook extends Component
 {
@@ -16,7 +17,7 @@ class CreateBook extends Component
     #[Rule('required|string|min:3|max:50')]
     public $author;
 
-    #[Rule('required|integer|min:1|max:10')]
+    #[Rule('required|integer|min:1|max:10')] 
     public $rating;
 
     public function save()
@@ -28,9 +29,10 @@ class CreateBook extends Component
             'author' => $this->author,
             'rating' => $this->rating
         ]);
-        $this->redirect('/');
+        $this->redirect('/', navigate: true);
     }
 
+    #[Title('Create Book')]
     public function render()
     {
         return view('livewire.create-book');
